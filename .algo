@@ -1,22 +1,22 @@
-ALGORITHM problèmes
+ALGORITHM sommes distinctes
 
 BEGIN
 Probleme 1 
 //Déclaration des 2 tableaux
-tableau1 <- [3,1,7,9]
-tableau2 <- [2,4,1,9,3]
-somme <- 0
+tableau1 = [3,1,7,9]
+tableau2 = [2,4,1,9,3]
+somme = 0
 
-//premier tableu
-POUR i DE 0 A longueur(tableau1) - 1 FAIRE
+//premier tableau
+POUR i DE 0 A longueur(tableau1) -1 FAIRE
 SI tableau1[i] n'est pas dans tableau2 ALORS
-    somme <- somme + tableau1[i]
+    somme = somme + tableau1[i]
 FIN SI
 FIN POUR
 //deuxième tableau
 POUR j DE 0 A longueur(tableau2) - 1 FAIRE
 SI tableau2[j] n'est pas dans tableau1 ALORS
-    somme <- somme + tableau2[j]
+    somme = somme + tableau2[j]
 FIN SI
 FIN POUR
 //affichage résultat
@@ -26,44 +26,45 @@ END
 Problème 2
 PROCEDURE dot_product 
 (VAR v1, v2, VAR ps)
-ps <- 0
+ps = 0
 POUR i DE 0 A longueur(v1) - 1 FAIRE
-    ps <- ps + v1[i] * v2[i]
+    ps = ps + v1[i] * v2[i]
 FIN POUR
 FIN PROCEDURE
 
 // exemple
 BEGIN
-v1 <- [ 2, 3]
-v2 <- [ -3, 2]
-ps <- 0
+v1 = [ 2, 3]
+v2 = [ -3, 2]
+ps = 0
+
 // appel de la procédure
 dot_product(v1, v2, ps)
 AFFICHER "Le produit scalaire est : ", ps
 SI ps = 0 ALORS
-    AFFICHER "Les vecteurs sont orthogonaux."
+    AFFICHER ("Les vecteurs sont orthogonaux.")
 SINON
-    AFFICHER "Les vecteurs ne sont pas orthogonaux."
+    AFFICHER ("Les vecteurs ne sont pas orthogonaux.")
 FIN SI
 END
 
 FUNCTION dot_product ( v1, v2) 
-ps <- 0
+ps = 0
 POUR i DE 0 A longueur(v1) - 1 FAIRE
-    ps <- ps + v1[i] * v2[i]
+    ps = ps + v1[i] * v2[i]
 FIN POUR
 RETURN ps
 END FUNCTION
 
 //utilisation de la fonction
 BEGIN
-v1 <- [ 2, 3]
-v2 <- [ -3, 2]
-ps <- dot_product(v1, v2)
+v1 = [ 2, 3]
+v2 = [ -3, 2]
+ps = dot_product(v1, v2)
 AFFICHER "Le produit scalaire est : ", ps
 SI ps = 0 ALORS
-    AFFICHER "Les vecteurs sont orthogonaux."
+    AFFICHER ("Les vecteurs sont orthogonaux.")
 SINON
-    AFFICHER "Les vecteurs ne sont pas orthogonaux."
+    AFFICHER ("Les vecteurs ne sont pas orthogonaux.")
 FIN SI
 END
